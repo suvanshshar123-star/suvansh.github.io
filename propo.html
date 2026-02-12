@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>will you be my valentine? · a love letter</title>
+  
+  <!-- ========== ELEGANT TYPOGRAPHY ========== -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* ---------- ENCHANTED DESIGN SYSTEM — EVERY DETAIL POETIC ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fff9f7 0%, #ffeef2 100%);
+      font-family: 'Quicksand', 'Playfair Display', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* ---------- ANIMATED PETAL BACKGROUND (DREAMY) ---------- */
+    .petal-field {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .petal {
+      position: absolute;
+      background: radial-gradient(circle, #ffb7c5 10%, #ff9eb5 80%);
+      border-radius: 150% 0 150% 0;
+      opacity: 0.45;
+      transform: rotate(45deg);
+      box-shadow: 0 0 15px rgba(255, 140, 170, 0.4);
+      animation: petalFall 18s infinite linear;
+    }
+
+    @keyframes petalFall {
+      0% { top: -10%; transform: rotate(45deg) translateX(0); opacity: 0.5; }
+      100% { top: 110%; transform: rotate(405deg) translateX(40px); opacity: 0.1; }
+    }
+
+    /* ---------- MAIN CARD — A KEEPSAKE ---------- */
+    .valentine-cinema {
+      position: relative;
+      z-index: 50;
+      max-width: 900px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(24px) saturate(200%);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 64px 64px 64px 64px;
+      box-shadow: 
+        0 40px 80px -20px rgba(255, 90, 130, 0.4),
+        0 0 0 2px rgba(255, 220, 230, 0.9),
+        inset 0 0 30px rgba(255, 255, 255, 0.7);
+      padding: 56px 48px;
+      border: 1px solid rgba(255, 200, 210, 0.7);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      text-align: center;
+    }
+
+    /* when gift appears — magical shimmer */
+    .valentine-cinema.blessed {
+      background: rgba(255, 250, 245, 0.9);
+      box-shadow: 
+        0 50px 100px -10px rgba(255, 70, 120, 0.5),
+        0 0 0 4px rgba(255, 200, 200, 0.9),
+        inset 0 0 50px rgba(255, 210, 220, 0.8);
+    }
+
+    /* ---------- TITLE — HANDWRITTEN WITH LOVE ---------- */
+    .love-letter-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3.2rem, 12vw, 5.6rem);
+      font-weight: 700;
+      color: #9f3e5c;
+      text-shadow: 
+        2px 2px 0 #ffe3e8,
+        6px 6px 20px rgba(255, 120, 140, 0.3);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      line-height: 1.1;
+    }
+
+    .love-letter-sub {
+      font-size: 1.5rem;
+      color: #6d4c5c;
+      font-weight: 400;
+      border-bottom: 2px dashed #ffb6c1;
+      display: inline-block;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .love-letter-sub i {
+      color: #ff4d6d;
+      margin: 0 10px;
+    }
+
+    /* ---------- NAME — WHISPER ---------- */
+    .destined-name {
+      font-size: 1.9rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #b3405a, #803f50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 48px;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+    }
+
+    .destined-name::before,
+    .destined-name::after {
+      content: "✦";
+      color: #ff94a4;
+      margin: 0 20px;
+      font-size: 1.8rem;
+    }
+
+    /* ---------- BUTTON TRINITY — SCULPTED, EXPRESSIVE ---------- */
+    .button-symphony {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+      margin: 40px 0 32px;
+    }
+
+    .btn-love {
+      border: none;
+      background: white;
+      padding: 20px 44px;
+      border-radius: 100px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      font-family: 'Quicksand', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      box-shadow: 0 12px 0 rgba(0, 0, 0, 0.08), 0 18px 36px rgba(201, 76, 106, 0.2);
+      transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
+      cursor: pointer;
+      color: #35262b;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      flex: 0 1 auto;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-love i {
+      font-size: 1.7rem;
+      transition: transform 0.3s;
+    }
+
+    .btn-love:hover i {
+      transform: scale(1.25);
+    }
+
+    .btn-love::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.7s;
+    }
+
+    .btn-love:hover::before {
+      left: 100%;
+    }
+
+    .btn-yes {
+      background: #ff4d6d;
+      color: white;
+      box-shadow: 0 12px 0 #b32e4a, 0 24px 48px #ff8095;
+    }
+
+    .btn-no {
+      background: #ffe9f2;
+      color: #6b4e5a;
+      border: 2px solid #ffb6c9;
+      box-shadow: 0 10px 0 #d49aa7;
+    }
+
+    .btn-later {
+      background: #ffe9db;
+      color: #674f59;
+      border: 2px solid #fec8a9;
+      box-shadow: 0 10px 0 #dbaa8a;
+    }
+
+    .btn-love:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 18px 0 rgba(0, 0, 0, 0.08), 0 28px 48px rgba(255, 80, 120, 0.4);
+    }
+
+    .btn-love:active {
+      transform: translateY(8px);
+      box-shadow: 0 6px 0 rgba(0, 0, 0, 0.08), 0 18px 36px rgba(255, 80, 120, 0.3);
+    }
+
+    /* ---------- RESPONSE THEATER — POETRY + GIFT ---------- */
+    .response-stage {
+      margin-top: 48px;
+      padding: 44px 32px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      border-radius: 48px;
+      border: 2px solid rgba(255, 190, 200, 0.7);
+      transition: all 0.5s ease;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 0 40px rgba(255, 220, 220, 0.5);
+    }
+
+    .message-poem {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #39252b;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .digital-gift-chamber {
+      font-size: 4.2rem;
+      margin: 16px 0;
+      animation: softPulse 2.2s infinite ease-in-out;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @keyframes softPulse {
+      0% { transform: scale(1); filter: drop-shadow(0 0 5px #ffa5b5); }
+      50% { transform: scale(1.1); filter: drop-shadow(0 0 30px #ff6f8f); }
+      100% { transform: scale(1); filter: drop-shadow(0 0 5px #ffa5b5); }
+    }
+
+    .gift-label {
+      font-size: 1.4rem;
+      background: rgba(255, 235, 240, 0.9);
+      padding: 18px 36px;
+      border-radius: 100px;
+      color: #633d47;
+      border: 1.5px solid #ff8caa;
+      font-weight: 600;
+      margin-top: 20px;
+      backdrop-filter: blur(8px);
+    }
+
+    .gift-label i {
+      margin-right: 12px;
+      color: #ff4d6d;
+    }
+
+    /* ---------- MAGIC RESET BUTTON (GENTLE) ---------- */
+    .reset-enchant {
+      margin-top: 36px;
+      font-size: 1.1rem;
+      color: #a06b78;
+      text-decoration: none;
+      border-bottom: 2px dotted #ffafc2;
+      padding-bottom: 6px;
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.2s;
+      font-weight: 600;
+    }
+
+    .reset-enchant:hover {
+      color: #ff4d6d;
+      border-bottom-color: #ff4d6d;
+      transform: scale(1.05);
+    }
+
+    /* ---------- HIDDEN STATES ---------- */
+    .hidden-chamber {
+      display: none !important;
+    }
+
+    .visible-chamber {
+      display: flex !important;
+    }
+
+    #responseContainer {
+      display: none;
+    }
+
+    /* ---------- RESPONSIVE LOVE ---------- */
+    @media (max-width: 650px) {
+      .valentine-cinema { padding: 40px 24px; }
+      .btn-love { padding: 18px 30px; font-size: 1.2rem; }
+      .button-symphony { gap: 18px; }
+      .love-letter-title { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .destined-name::before, .destined-name::after { content: "❤"; margin: 0 8px; }
+      .btn-love { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== FLOATING PETALS (ROMANCE) ========== -->
+  <div class="petal-field" id="petalField"></div>
+  
+  <!-- ========== MAIN VALENTINE CARD — ENTER THE DREAMS ========== -->
+  <main class="valentine-cinema" id="valentineCard">
+    
+    <!-- PROPOSAL ACT I : THE QUESTION -->
+    <div id="proposalScene">
+      <h1 class="love-letter-title">will you be my valentine?</h1>
+      <div class="love-letter-sub">
+        <i class="fas fa-heart"></i> a question written in the stars <i class="fas fa-heart"></i>
+      </div>
+      <div class="destined-name">
+        for Suvansh, with all my heart
+      </div>
+      
+      <!-- THREE SACRED BUTTONS -->
+      <div class="button-symphony">
+        <button class="btn-love btn-yes" id="yesBtn">
+          <i class="fas fa-heart"></i> Yes
+        </button>
+        <button class="btn-love btn-no" id="noBtn">
+          <i class="fas fa-heart-broken"></i> No
+        </button>
+        <button class="btn-love btn-later" id="laterBtn">
+          <i class="fas fa-clock"></i> Maybe later · good as friends
+        </button>
+      </div>
+    </div>
+    
+    <!-- ACT II : RESPONSE & GIFT — BEAUTIFUL, CINEMATIC -->
+    <div id="responseContainer" class="response-stage hidden-chamber">
+      <!-- dynamic content injected by JS — pure poetry -->
+    </div>
+    
+    <!-- EPILOGUE : ASK AGAIN (GRACEFUL) -->
+    <a class="reset-enchant hidden-chamber" id="resetPhrase">
+      <i class="fas fa-feather-alt"></i> ask again? <i class="fas fa-feather-alt"></i>
+    </a>
+  </main>
+
+  <script>
+    // ---------------------------------------------------------------------
+    // 💖✨  THE MOST BEAUTIFUL VALENTINE EXPERIENCE — EVERY DETAIL CURATED
+    //      YES · NO · MAYBE LATER (good as friends)
+    //      DIGITAL GIFT, CONFetti, PETALS, POETRY, AND ENCHANTMENT
+    // ---------------------------------------------------------------------
+
+    (function() {
+      "use strict";
+
+      // ---------- ELEMENTS ----------
+      const proposalScene = document.getElementById('proposalScene');
+      const responseContainer = document.getElementById('responseContainer');
+      const resetBtn = document.getElementById('resetPhrase');
+      const card = document.getElementById('valentineCard');
+      const petalField = document.getElementById('petalField');
+
+      // ---------- CREATE FLOATING PETALS (MORE ROMANTIC) ----------
+      function createPetals() {
+        const count = window.innerWidth < 600 ? 24 : 42;
+        for (let i = 0; i < count; i++) {
+          const petal = document.createElement('div');
+          petal.classList.add('petal');
+          const size = Math.floor(Math.random() * 24 + 12);
+          petal.style.width = size + 'px';
+          petal.style.height = (size * 0.8) + 'px';
+          petal.style.left = Math.random() * 100 + '%';
+          petal.style.animationDelay = Math.random() * 14 + 's';
+          petal.style.animationDuration = (Math.random() * 16 + 16) + 's';
+          petal.style.background = `radial-gradient(circle, #ff${Math.floor(Math.random()*50+170).toString(16)}b5, #ff${Math.floor(Math.random()*40+150).toString(16)}a0)`;
+          petal.style.opacity = Math.random() * 0.4 + 0.2;
+          petalField.appendChild(petal);
+        }
+      }
+      createPetals();
+
+      // ---------- LOAD CONFETTI (ELEGANT CELEBRATION) ----------
+      function loadConfetti() {
+        return new Promise((resolve) => {
+          if (window.confetti) { resolve(); return; }
+          const script = document.createElement('script');
+          script.src = 'https://cdn.jsdelivr.net/npm/canvas-confetti@1';
+          script.onload = resolve;
+          document.head.appendChild(script);
+        });
+      }
+      loadConfetti();
+
+      // ---------- CONFETTI BURST (YES) ----------
+      function burstConfetti() {
+        if (window.confetti) {
+          confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 }, colors: ['#ff4d6d', '#ff8c9c', '#ffb3c6', '#ffffff'] });
+          confetti({ particleCount: 80, spread: 60, origin: { y: 0.7, x: 0.3 }, colors: ['#ffacc0', '#ff6b7b', '#ff4d6d'] });
+          confetti({ particleCount: 80, spread: 60, origin: { y: 0.7, x: 0.7 }, colors: ['#ffd3db', '#ff8a9a', '#ff4d6d'] });
+          setTimeout(() => {
+            confetti({ particleCount: 60, spread: 40, origin: { y: 0.5, x: 0.5 } });
+          }, 200);
+        }
+      }
+
+      // ---------- SHOW RESPONSE — THREE UNIQUE, POETIC OUTCOMES ----------
+      function showResponse(type) {
+        // hide proposal
+        proposalScene.style.display = 'none';
+        
+        // show response container + reset button
+        responseContainer.classList.remove('hidden-chamber');
+        responseContainer.classList.add('visible-chamber');
+        resetBtn.classList.remove('hidden-chamber');
+        
+        // bless card with glow
+        card.classList.add('blessed');
+        
+        // -------------------------------------------------------------
+        // 💖  YES —  A DIGITAL LOVE LETTER + GIFT (MAGICAL)
+        // -------------------------------------------------------------
+        if (type === 'yes') {
+          responseContainer.innerHTML = `
+            <div style="text-align: center;">
+              <div class="digital-gift-chamber">
+                <i class="fas fa-gift" style="color:#ff6b8b;"></i>
+                <i class="fas fa-ring" style="color:#ffb3c1;"></i>
+                <i class="fas fa-crown" style="color:#ffd166;"></i>
+              </div>
+              <div class="message-poem" style="font-size: 2.1rem; font-family: 'Dancing Script';">
+                you said yes. ❤️
+              </div>
+              <div style="font-size: 1.8rem; font-weight: 500; margin: 12px 0; color: #602c3a;">
+                my heart is doing cartwheels.
+              </div>
+              <div style="background: rgba(255, 215, 225, 0.7); padding: 24px; border-radius: 48px; margin: 28px 0;">
+                <span style="font-size: 2.8rem;">💌💘💖</span>
+                <p style="font-size: 1.4rem; font-style: italic; color: #4f2d36;">"every love story is beautiful, but ours is my favorite."</p>
+              </div>
+              <div class="gift-label">
+                <i class="fas fa-star"></i> your digital gift: a secret playlist + a constellation named after us <i class="fas fa-star"></i>
+              </div>
+              <p style="margin-top: 32px; font-size: 1.3rem; background: #ffeef2; padding: 14px 24px; border-radius: 60px;">
+                <i class="fas fa-heart" style="color:#ff4d6d;"></i> feb 14 is going to be unforgettable <i class="fas fa-heart" style="color:#ff4d6d;"></i>
+              </p>
+            </div>
+          `;
+          burstConfetti();
+        }
+        
+        // -------------------------------------------------------------
+        // 💔  NO —  GENTLE, KIND, POETIC
+        // -------------------------------------------------------------
+        else if (type === 'no') {
+          responseContainer.innerHTML = `
+            <div style="text-align: center;">
+              <span style="font-size: 5rem;">🌸🌼🌺</span>
+              <div class="message-poem" style="color: #63464e; margin-top: 16px;">
+                it's okay. honesty is a beautiful thing.
+              </div>
+              <p style="font-size: 1.6rem; margin: 24px 0; font-family: 'Dancing Script'; color: #684e56;">
+                “sometimes love means letting go with grace.”
+              </p>
+              <div style="background: rgba(230, 235, 250, 0.6); padding: 24px; border-radius: 50px;">
+                <i class="fas fa-hand-holding-heart" style="font-size: 3rem; color: #8a7a80;"></i>
+                <p style="font-size: 1.3rem; margin-top: 12px;">no hard feelings. your friendship is still a treasure.</p>
+              </div>
+              <div style="margin-top: 32px;">
+                <span style="background: #ffe6ec; padding: 12px 32px; border-radius: 40px; color: #6d4c5c;"><i class="fas fa-coffee"></i> coffee & conversation?</span>
+              </div>
+            </div>
+          `;
+        }
+        
+        // -------------------------------------------------------------
+        // 🕰️  MAYBE LATER (GOOD AS FRIENDS) — WARM, OPTIMISTIC
+        // -------------------------------------------------------------
+        else if (type === 'later') {
+          responseContainer.innerHTML = `
+            <div style="text-align: center;">
+              <div style="font-size: 4.5rem; margin-bottom: 10px;">🍃📖☕</div>
+              <div class="message-poem" style="color: #5a4b50;">
+                "maybe later" feels like an open door.
+              </div>
+              <p style="font-size: 1.7rem; font-weight: 600; color: #865761; margin: 20px 0; font-family: 'Dancing Script';">
+                let's grow as friends first.
+              </p>
+              <div style="background: #fff2e5; padding: 28px; border-radius: 48px;">
+                <i class="fas fa-smile-beam" style="font-size: 3rem; color: #e6987a;"></i>
+                <p style="font-size: 1.3rem; margin-top: 12px;">friendship is the roots of something beautiful.</p>
+              </div>
+              <div class="gift-label" style="background: #ffede1; border-color: #f8ad8a;">
+                <i class="fas fa-feather"></i> here's a digital pressing flower — for later. 🌷
+              </div>
+              <p style="margin-top: 32px; color: #6e595f;">no pressure. just warmth.</p>
+            </div>
+          `;
+        }
+      }
+
+      // ---------- RESET FUNCTION (ASK AGAIN) ----------
+      window.resetProposal = function() {
+        proposalScene.style.display = 'block';
+        responseContainer.classList.add('hidden-chamber');
+        responseContainer.classList.remove('visible-chamber');
+        resetBtn.classList.add('hidden-chamber');
+        card.classList.remove('blessed');
+        responseContainer.innerHTML = ''; // clear
+      };
+
+      // ---------- ATTACH BUTTON LISTENERS ----------
+      document.getElementById('yesBtn').addEventListener('click', function() { showResponse('yes'); });
+      document.getElementById('noBtn').addEventListener('click', function() { showResponse('no'); });
+      document.getElementById('laterBtn').addEventListener('click', function() { showResponse('later'); });
+      
+      // reset listener
+      document.getElementById('resetPhrase').addEventListener('click', function(e) {
+        e.preventDefault();
+        resetProposal();
+      });
+
+      // ---------- INITIAL HIDE ----------
+      responseContainer.classList.add('hidden-chamber');
+      resetBtn.classList.add('hidden-chamber');
+      proposalScene.style.display = 'block';
+
+      // ---------- EXTRA MAGIC: FLOATING CURSOR HEARTS? (subtle) ----------
+      // create a soft heart trail on mousemove (optional, romantic)
+      let lastHeart = 0;
+      document.addEventListener('mousemove', function(e) {
+        if (Date.now() - lastHeart > 80) {
+          lastHeart = Date.now();
+          const heart = document.createElement('i');
+          heart.classList.add('fas', 'fa-heart');
+          heart.style.position = 'fixed';
+          heart.style.left = e.clientX - 12 + 'px';
+          heart.style.top = e.clientY - 12 + 'px';
+          heart.style.fontSize = '18px';
+          heart.style.color = 'rgba(255, 100, 130, 0.35)';
+          heart.style.pointerEvents = 'none';
+          heart.style.zIndex = '9999';
+          heart.style.transition = 'opacity 1s, transform 1s';
+          heart.style.opacity = '0.6';
+          document.body.appendChild(heart);
+          setTimeout(() => { heart.style.opacity = '0'; heart.style.transform = 'translateY(-20px) scale(1.5)'; }, 50);
+          setTimeout(() => { if (heart.parentNode) heart.parentNode.removeChild(heart); }, 1000);
+        }
+      });
+
+      console.log('💘✨ valentine magic ready — you create the poetry.');
+    })();
+  </script>
+
+  <!-- tiny style adjustment: response container visibility -->
+  <style>
+    .hidden-chamber { display: none !important; }
+    .visible-chamber { display: flex !important; }
+    .btn-love { cursor: pointer; }
+    #responseContainer { display: none; } /* default hidden */
+    #resetPhrase { display: none; } /* hidden initially */
+  </style>
+  <!-- ensure reset button is hidden at start -->
+  <script>
+    (function immediate() {
+      document.getElementById('responseContainer').classList.add('hidden-chamber');
+      document.getElementById('resetPhrase').classList.add('hidden-chamber');
+    })();
+  </script>
+</body>
+</html>
