@@ -4,31 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <!-- ================ META INTELLIGENCE ================ -->
-  <title>Suvansh Sharma · AI/ML Engineer · skill matrix</title>
-  <meta name="description" content="Suvansh Sharma — AI/ML Engineer. C, C++, Python, Go. Ethical hacking, edge AI, systems programming.">
+  <title>Suvansh Sharma · AI/ML · matrix</title>
+  <meta name="description" content="Suvansh Sharma — AI/ML Engineer. C, C++, Python, Go. Ethical hacking, edge AI.">
   
-  <!-- ================ TYPOGRAPHY ================ -->
+  <!-- fonts & icons (same as reference) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- ================ ICONS ================ -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* 
-    =====================================================================
-    ███████╗██╗   ██╗██╗   ██╗ █████╗ ███╗   ██╗███████╗██╗  ██╗
-    ██╔════╝██║   ██║██║   ██║██╔══██╗████╗  ██║██╔════╝██║  ██║
-    ███████╗██║   ██║██║   ██║███████║██╔██╗ ██║███████╗███████║
-    ╚════██║██║   ██║╚██╗ ██╔╝██╔══██║██║╚██╗██║╚════██║██╔══██║
-    ███████║╚██████╔╝ ╚████╔╝ ██║  ██║██║ ╚████║███████║██║  ██║
-    ╚══════╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
-    =====================================================================
-    SKILL SECTION UPGRADE — SPLINE‑INSPIRED INTERACTION
-    Each skill block reacts with 3D lift, glows, and displays hidden tooltip.
-    =====================================================================
-    */
-    
+    /* ----- ROOT & RESET (exactly the same atmosphere) ----- */
     :root {
       --black: 0, 0%, 0%;
       --deep-space: 240, 50%, 2%;
@@ -43,17 +27,8 @@
       --easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'Inter', 'Syne', sans-serif;
       background-color: hsl(var(--deep-space));
@@ -61,13 +36,12 @@
       line-height: 1.6;
       overflow-x: hidden;
       position: relative;
-      cursor: none; /* custom cursor */
+      cursor: none;
     }
 
-    /* ============== CUSTOM CURSOR (unchanged) ============= */
+    /* ----- custom cursor (iconic) ----- */
     #cursor {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       border: 2px solid rgba(0, 240, 255, 0.7);
       border-radius: 50%;
       position: fixed;
@@ -80,471 +54,137 @@
       transition: width 0.15s var(--easing-smooth), height 0.15s var(--easing-smooth), border-color 0.15s;
       will-change: left, top;
     }
-
     #cursor::after {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: white;
-      border-radius: 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      content: ''; width: 8px; height: 8px; background: white; border-radius: 50%;
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       box-shadow: 0 0 20px cyan;
     }
+    #cursor.hover { width: 56px; height: 56px; border-color: rgba(255,255,255,0.9); background: radial-gradient(circle, rgba(0,240,255,0.25) 0%, transparent 80%); }
 
-    #cursor.hover {
-      width: 56px;
-      height: 56px;
-      border-color: rgba(255, 255, 255, 0.9);
-      background: radial-gradient(circle, rgba(0,240,255,0.25) 0%, transparent 80%);
-    }
-
-    /* ============== MAIN CONTAINER ============= */
-    .container {
-      max-width: 1440px;
-      margin: 0 auto;
-      padding: 0 48px;
-      position: relative;
-      z-index: 100;
-    }
-
-    /* ============== NAVIGATION ============= */
+    /* ----- container / nav (same structure) ----- */
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 100; }
     nav {
-      position: sticky;
-      top: 24px;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 40px;
-      background: rgba(3, 6, 14, 0.7);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
+      position: sticky; top: 24px; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 40px; background: rgba(3, 6, 14, 0.7);
+      backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
       border: 1px solid rgba(0, 230, 255, 0.18);
-      width: 95%;
-      max-width: 1360px;
-      margin: 0 auto 40px;
-      transition: 0.4s;
+      width: 95%; max-width: 1360px; margin: 0 auto 40px; transition: 0.4s;
     }
-
     .logo {
-      font-size: 28px;
-      font-weight: 800;
-      font-family: 'Syne', sans-serif;
-      letter-spacing: -1.5px;
+      font-size: 28px; font-weight: 800; font-family: 'Syne', sans-serif; letter-spacing: -1.5px;
       background: linear-gradient(135deg, #ffffff 0%, #a0f0ff 70%, #80e0ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
+    .nav-links { display: flex; gap: 56px; }
+    .nav-link { color: #e0e8ff; text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: 1.5px; text-transform: uppercase; position: relative; padding: 8px 0; transition: 0.25s; }
+    .nav-link::before { content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px; background: #00f0ff; transition: width 0.3s var(--easing-smooth); }
+    .nav-link:hover::before { width: 100%; }
 
-    .nav-links {
-      display: flex;
-      gap: 56px;
-    }
+    /* ----- hero (yours, same energy) ----- */
+    .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 40px 0 60px; }
+    .hero-prelude { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .hero-line { width: 60px; height: 2px; background: linear-gradient(90deg, #00f0ff, transparent); }
+    .hero-greeting { font-family: 'Space Mono', monospace; font-size: 16px; color: #88f0ff; letter-spacing: 8px; text-transform: uppercase; }
+    .hero-name { font-size: 100px; font-weight: 900; line-height: 0.9; letter-spacing: -6px; margin-bottom: 24px; font-family: 'Syne', sans-serif; }
+    .hero-name-first { display: block; background: linear-gradient(135deg, #ffffff 0%, #b0f0ff 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-name-last { display: block; background: linear-gradient(135deg, #e0f0ff 0%, #80e0ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-left: 40px; }
+    .hero-desc { max-width: 700px; font-size: 22px; color: #c0d0e0; margin-bottom: 40px; }
+    .hero-cta { display: flex; gap: 32px; }
+    .btn { padding: 18px 48px; font-weight: 700; font-size: 18px; text-decoration: none; position: relative; overflow: hidden; transition: 0.3s; letter-spacing: 2px; border: none; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); z-index: 1; }
+    .btn-primary { background: white; color: black; border: none; }
+    .btn-primary:hover { background: #a0f0ff; transform: translateY(-6px); box-shadow: 0 25px 40px -12px rgba(0,230,255,0.4); }
+    .btn-outline:hover { border-color: #00f0ff; background: rgba(0,240,255,0.05); transform: translateY(-6px); }
 
-    .nav-link {
-      color: #e0e8ff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      position: relative;
-      padding: 8px 0;
-      transition: 0.25s;
-    }
+    /* section headers */
+    .section { margin-bottom: 140px; }
+    .section-header { margin-bottom: 70px; }
+    .section-tag { font-family: 'Space Mono', monospace; font-size: 14px; color: #80f0ff; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 20px; }
+    .section-title { font-size: 72px; font-weight: 800; letter-spacing: -3px; line-height: 1; font-family: 'Syne', sans-serif; }
+    .section-title span { background: linear-gradient(to right, #ffffff, #b0f0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-    .nav-link::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: #00f0ff;
-      transition: width 0.3s var(--easing-smooth);
-    }
+    /* about grid */
+    .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+    .about-text p { color: #d0d8e8; font-size: 18px; margin-bottom: 28px; }
+    .about-quote { background: rgba(0, 240, 255, 0.03); border-left: 6px solid #00f0ff; padding: 28px 32px; font-size: 18px; color: #e0f0ff; }
 
-    .nav-link:hover::before {
-      width: 100%;
-    }
-
-    /* ============== HERO (unchanged, shortened) ============= */
-    .hero {
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 40px 0 60px;
-    }
-    .hero-prelude {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .hero-line {
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, #00f0ff, transparent);
-    }
-    .hero-greeting {
-      font-family: 'Space Mono', monospace;
-      font-size: 16px;
-      color: #88f0ff;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-    }
-    .hero-name {
-      font-size: 100px;
-      font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -6px;
-      margin-bottom: 24px;
-      font-family: 'Syne', sans-serif;
-    }
-    .hero-name-first {
-      display: block;
-      background: linear-gradient(135deg, #ffffff 0%, #b0f0ff 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-name-last {
-      display: block;
-      background: linear-gradient(135deg, #e0f0ff 0%, #80e0ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-left: 40px;
-    }
-    .hero-desc {
-      max-width: 700px;
-      font-size: 22px;
-      color: #c0d0e0;
-      margin-bottom: 40px;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 32px;
-    }
-    .btn {
-      padding: 18px 48px;
-      font-weight: 700;
-      font-size: 18px;
-      text-decoration: none;
-      position: relative;
-      overflow: hidden;
-      transition: 0.3s;
-      letter-spacing: 2px;
-      border: none;
-      background: transparent;
-      color: white;
-      border: 1px solid rgba(255,255,255,0.2);
-      z-index: 1;
-    }
-    .btn-primary {
-      background: white;
-      color: black;
-      border: none;
-    }
-    .btn-primary:hover {
-      background: #a0f0ff;
-      transform: translateY(-6px);
-      box-shadow: 0 25px 40px -12px rgba(0,230,255,0.4);
-    }
-    .btn-outline:hover {
-      border-color: #00f0ff;
-      background: rgba(0,240,255,0.05);
-      transform: translateY(-6px);
-    }
-
-    /* ============== SECTION ============= */
-    .section {
-      margin-bottom: 140px;
-    }
-    .section-header {
-      margin-bottom: 70px;
-    }
-    .section-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 14px;
-      color: #80f0ff;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .section-title {
-      font-size: 72px;
-      font-weight: 800;
-      letter-spacing: -3px;
-      line-height: 1;
-      font-family: 'Syne', sans-serif;
-    }
-    .section-title span {
-      background: linear-gradient(to right, #ffffff, #b0f0ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* ============== ABOUT (simplified) ============= */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
-      align-items: start;
-    }
-    .about-text p {
-      color: #d0d8e8;
-      font-size: 18px;
-      margin-bottom: 28px;
-    }
-    .about-quote {
-      background: rgba(0, 240, 255, 0.03);
-      border-left: 6px solid #00f0ff;
-      padding: 28px 32px;
-      font-size: 18px;
-      color: #e0f0ff;
-    }
-
-    /* ---------- NEW SKILL SECTION — SPLINE INSPIRED ---------- */
-    .skill-matrix {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      perspective: 1200px;
-    }
-
+    /* ----- SKILL MATRIX (spline-like 3d blocks) exactly as reference but your content ----- */
+    .skill-matrix { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; perspective: 1200px; }
     .skill-block {
-      background: rgba(10, 20, 30, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(0, 240, 255, 0.15);
-      padding: 32px 28px;
-      position: relative;
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
-      transform-style: preserve-3d;
-      box-shadow: 0 15px 35px -15px rgba(0,0,0,0.6);
-      cursor: pointer;
-      overflow: hidden;
+      background: rgba(10, 20, 30, 0.65); backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 240, 255, 0.15); padding: 32px 28px;
+      position: relative; transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
+      transform-style: preserve-3d; box-shadow: 0 15px 35px -15px rgba(0,0,0,0.6);
+      cursor: pointer; overflow: hidden;
     }
-
-    /* 3D lift + glow on hover — spline spirit */
     .skill-block:hover {
       transform: translateY(-12px) rotateX(2deg) rotateY(1deg) scale(1.02);
-      border-color: #70f0ff;
-      box-shadow: 0 30px 50px -15px #00f0ff55, 0 0 0 1px rgba(0, 240, 255, 0.3) inset;
+      border-color: #70f0ff; box-shadow: 0 30px 50px -15px #00f0ff55, 0 0 0 1px rgba(0, 240, 255, 0.3) inset;
       background: rgba(15, 30, 45, 0.85);
     }
-
-    .skill-block i {
-      font-size: 48px;
-      color: #b0f8ff;
-      margin-bottom: 20px;
-      display: inline-block;
-      transition: 0.3s;
-      filter: drop-shadow(0 0 6px #40a0ff);
-    }
-
-    .skill-block h4 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, #ffffff, #b0f0ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .skill-block .skill-short {
-      font-size: 16px;
-      color: #aac0dd;
-      display: block;
-      margin-bottom: 18px;
-    }
-
-    /* hidden skill details — appear on hover (spline‑like) */
+    .skill-block i { font-size: 48px; color: #b0f8ff; margin-bottom: 20px; display: inline-block; transition: 0.3s; filter: drop-shadow(0 0 6px #40a0ff); }
+    .skill-block h4 { font-size: 32px; font-weight: 700; margin-bottom: 10px; background: linear-gradient(135deg, #ffffff, #b0f0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .skill-block .skill-short { font-size: 16px; color: #aac0dd; display: block; margin-bottom: 18px; }
+    /* hidden detail – appears on hover */
     .skill-detail {
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(10px);
+      max-height: 0; opacity: 0; transform: translateY(10px);
       transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
-      overflow: hidden;
-      color: #d0eaff;
-      font-size: 15px;
-      border-top: 1px dashed rgba(0,240,255,0.2);
-      margin-top: 12px;
-      padding-top: 0;
+      overflow: hidden; color: #d0eaff; font-size: 15px;
+      border-top: 1px dashed rgba(0,240,255,0.2); margin-top: 12px; padding-top: 0;
     }
-
     .skill-block:hover .skill-detail {
-      max-height: 150px;
-      opacity: 1;
-      transform: translateY(0);
-      padding-top: 18px;
+      max-height: 150px; opacity: 1; transform: translateY(0); padding-top: 18px;
     }
+    .skill-detail p { margin-bottom: 12px; line-height: 1.5; }
+    .skill-detail i { font-size: 14px; margin-right: 6px; color: #80f0ff; }
 
-    .skill-detail p {
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
+    /* progress array & extras */
+    .progress-array { margin-top: 32px; }
+    .progress-unit { display: flex; align-items: center; margin-bottom: 20px; }
+    .progress-unit-label { width: 100px; font-weight: 600; color: #e0f0ff; }
+    .progress-unit-bar { flex: 1; height: 10px; background: #1a2634; margin: 0 20px; position: relative; overflow: hidden; }
+    .progress-unit-fill { height: 10px; background: linear-gradient(90deg, #ffffff, #00f0ff, #4080ff); background-size: 200% 100%; width: 0%; transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
 
-    .skill-detail i {
-      font-size: 14px;
-      margin-right: 6px;
-      color: #80f0ff;
-    }
+    .go-signal-new { margin-top: 40px; padding: 24px; background: rgba(0, 160, 255, 0.08); border: 1px dashed #40c0ff; display: flex; align-items: center; gap: 20px; }
+    .go-signal-new i { font-size: 42px; color: #60e0ff; }
 
-    /* extra polish for go block */
-    .go-signal-new {
-      margin-top: 40px;
-      padding: 24px;
-      background: rgba(0, 160, 255, 0.08);
-      border: 1px dashed #40c0ff;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .go-signal-new i {
-      font-size: 42px;
-      color: #60e0ff;
-    }
+    /* projects grid (3 columns) */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .project-vessel { background: rgba(6, 14, 22, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.03); padding: 36px 28px; transition: 0.35s; }
+    .project-vessel:hover { border-color: rgba(0, 240, 255, 0.5); transform: translateY(-12px) scale(1.02); }
+    .project-icon { font-size: 48px; color: #b0f0ff; margin-bottom: 24px; }
+    .project-vessel h3 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .project-taglist { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+    .project-tag { background: rgba(255,255,255,0.04); padding: 5px 14px; font-size: 11px; font-family: 'Space Mono', monospace; border: 1px solid rgba(0,240,255,0.2); }
 
-    /* progress array (unchanged) */
-    .progress-array {
-      margin-top: 32px;
-    }
-    .progress-unit {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-    .progress-unit-label {
-      width: 100px;
-      font-weight: 600;
-      color: #e0f0ff;
-    }
-    .progress-unit-bar {
-      flex: 1;
-      height: 10px;
-      background: #1a2634;
-      margin: 0 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .progress-unit-fill {
-      height: 10px;
-      background: linear-gradient(90deg, #ffffff, #00f0ff, #4080ff);
-      background-size: 200% 100%;
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-    }
+    /* contact chamber — now with your links */
+    .contact-chamber { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: rgba(4, 10, 18, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(0, 240, 255, 0.1); padding: 56px; }
+    .cyber-address-item { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+    .cyber-address-item a { color: white; text-decoration: none; border-bottom: 1px solid transparent; transition: 0.2s; }
+    .cyber-address-item a:hover { border-bottom-color: #00f0ff; }
+    .transmission-form { background: rgba(0,0,0,0.3); padding: 36px; }
+    .form-group { margin-bottom: 24px; }
+    .form-group input, .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 14px 0; color: white; outline: none; }
+    .transmit-btn { width: 100%; padding: 18px; background: white; color: black; font-weight: 700; letter-spacing: 3px; border: none; cursor: pointer; transition:0.2s; }
+    .transmit-btn:hover { background:#a0f0ff; }
 
-    /* ============== PROJECTS & CONTACT (condensed) ============= */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .project-vessel {
-      background: rgba(6, 14, 22, 0.7);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.03);
-      padding: 36px 28px;
-      transition: 0.35s;
-    }
-    .project-vessel:hover {
-      border-color: rgba(0, 240, 255, 0.5);
-      transform: translateY(-12px) scale(1.02);
-    }
-    .project-icon {
-      font-size: 48px;
-      color: #b0f0ff;
-      margin-bottom: 24px;
-    }
-    .project-vessel h3 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
-    .project-taglist {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0;
-    }
-    .project-tag {
-      background: rgba(255,255,255,0.04);
-      padding: 5px 14px;
-      font-size: 11px;
-      font-family: 'Space Mono', monospace;
-      border: 1px solid rgba(0,240,255,0.2);
-    }
-
-    /* contact & footer abbreviated */
-    .contact-chamber {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      background: rgba(4, 10, 18, 0.7);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 240, 255, 0.1);
-      padding: 56px;
-    }
-    .cyber-address-item {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 20px;
-    }
-    .transmission-form {
-      background: rgba(0,0,0,0.3);
-      padding: 36px;
-    }
-    .form-group {
-      margin-bottom: 24px;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      padding: 14px 0;
-      color: white;
-    }
-    .transmit-btn {
-      width: 100%;
-      padding: 18px;
-      background: white;
-      color: black;
-      font-weight: 700;
-      letter-spacing: 3px;
-      border: none;
-      cursor: pointer;
-    }
-    .footer {
-      padding: 40px 0;
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
+    .footer { padding: 40px 0; display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer a { color:#a0b0c0; text-decoration:none; }
+    .footer a:hover { color:#00f0ff; }
 
     /* reveal animations */
-    .reveal, .reveal-left, .reveal-right {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s, transform 0.8s;
-    }
+    .reveal, .reveal-left, .reveal-right { opacity: 0; transform: translateY(40px); transition: opacity 0.8s, transform 0.8s; }
     .reveal-left { transform: translateX(-40px); }
     .reveal-right { transform: translateX(40px); }
-    .reveal.visible, .reveal-left.visible, .reveal-right.visible {
-      opacity: 1;
-      transform: translate(0,0);
-    }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translate(0,0); }
+
+    /* progress fill init */
+    .progress-unit-fill { width: 0%; }
   </style>
 </head>
 <body>
   <div id="cursor"></div>
 
-  <!-- minimal navigation -->
   <nav>
     <div class="logo">SUVANSH</div>
     <div class="nav-links">
@@ -556,15 +196,15 @@
   </nav>
 
   <main class="container">
-    <!-- HERO quick -->
+    <!-- hero section -->
     <section id="hero" class="hero">
-      <div class="hero-prelude" data-aos="fade-up"><div class="hero-line"></div><span class="hero-greeting">INTELLIGENCE ARCHITECT</span></div>
+      <div class="hero-prelude"><div class="hero-line"></div><span class="hero-greeting">INTELLIGENCE ARCHITECT</span></div>
       <h1 class="hero-name"><span class="hero-name-first">Suvansh</span><span class="hero-name-last">Sharma</span></h1>
       <p class="hero-desc">I architect intelligent systems at the intersection of <strong>C, C++, Python, Go</strong>. Ethical hacker by mindset, systems programmer by craft.</p>
       <div class="hero-cta"><a href="#projects" class="btn btn-primary">ENTER ATLAS</a><a href="#contact" class="btn btn-outline">SIGNAL</a></div>
     </section>
 
-    <!-- ABOUT + SKILL SECTION (modified with spline‑style skill blocks) -->
+    <!-- about + skill matrix (exactly like reference but your name/links) -->
     <section id="about" class="section">
       <div class="section-header reveal">
         <div class="section-tag">01 / IDENTITY & SKILLS</div>
@@ -572,14 +212,13 @@
       </div>
 
       <div class="about-grid">
-        <!-- left about text -->
         <div class="about-text reveal-left">
-          <p>Hello, my name is Suvansh — AI/ML Engineer with deep foundation in C, C++, Python, and Go. I build systems that are both intelligent and robust, from embedded inference to distributed backends.</p>
+          <p>I'm Suvansh Sharma — AI/ML Engineer with deep foundations in C, C++, Python, and Go. I build systems that are both intelligent and robust, from embedded inference to distributed backends.</p>
           <p>I am obsessed with performance, ethical hacking, and edge AI. Every line of code carries intention.</p>
           <div class="about-quote"><i class="fas fa-quote-left"></i> My long-term vision: future-proof AI systems with clarity, authenticity, and ethical innovation.</div>
         </div>
 
-        <!-- RIGHT: NEW SKILL MATRIX — SPLINE INSPIRED (hover reveals details) -->
+        <!-- right side: skill blocks (spline style) -->
         <div class="reveal-right" style="width:100%">
           <div class="skill-matrix">
             <!-- C block -->
@@ -588,7 +227,7 @@
               <h4>C</h4>
               <span class="skill-short">systems · embedded · performance</span>
               <div class="skill-detail">
-                <p><i class="fas fa-microchip"></i> memory management, RTOS, lock-free structures. 7+ years of low-level intuition.</p>
+                <p><i class="fas fa-microchip"></i> memory management, RTOS, lock-free structures. deep low-level intuition.</p>
               </div>
             </div>
             <!-- C++ block -->
@@ -597,7 +236,7 @@
               <h4>C++</h4>
               <span class="skill-short">inference · high-frequency</span>
               <div class="skill-detail">
-                <p><i class="fas fa-brain"></i> template metaprogramming, SIMD, quantized LLM inference, armadillo.</p>
+                <p><i class="fas fa-brain"></i> template metaprogramming, SIMD, quantized LLM inference.</p>
               </div>
             </div>
             <!-- Python block -->
@@ -618,7 +257,7 @@
                 <p><i class="fas fa-cloud"></i> building high-concurrency guardrails & inference proxies. go routines + cgo.</p>
               </div>
             </div>
-            <!-- HTML/CSS block (extra) -->
+            <!-- HTML/CSS (extra) -->
             <div class="skill-block">
               <i class="fab fa-html5"></i>
               <h4>HTML/CSS</h4>
@@ -627,7 +266,7 @@
                 <p><i class="fas fa-paint-brush"></i> 3D layouts, glassmorphism, animation architecture.</p>
               </div>
             </div>
-            <!-- Security/ethical hacking block (new) -->
+            <!-- Ethical hacking block -->
             <div class="skill-block">
               <i class="fas fa-shield-halved"></i>
               <h4>Ethical Hacking</h4>
@@ -638,7 +277,7 @@
             </div>
           </div>
 
-          <!-- go signal / progress (unchanged vibe) -->
+          <!-- go signal (active work) + progress bars -->
           <div class="go-signal-new" style="margin-top: 32px;">
             <i class="fab fa-golang"></i>
             <div><strong>actively working on Go</strong> — distributed inference systems & cloud‑native backends</div>
@@ -653,7 +292,7 @@
       </div>
     </section>
 
-    <!-- PROJECTS (short) -->
+    <!-- projects -->
     <section id="projects" class="section">
       <div class="section-header reveal">
         <div class="section-tag">02 / FORTHCOMING</div>
@@ -666,16 +305,17 @@
       </div>
     </section>
 
-    <!-- CONTACT (quick) -->
+    <!-- contact + all your correct links -->
     <section id="contact" class="section">
       <div class="contact-chamber">
         <div class="contact-left reveal-left">
           <div class="section-tag">03 / CONNECTION</div>
-          <h2 style="font-size: 48px;">Let's build intelligent.</h2>
+          <h2 style="font-size: 48px; margin-bottom: 32px;">Let's build intelligent.</h2>
           <div class="cyber-address">
-            <div class="cyber-address-item"><i class="fas fa-envelope"></i><a href="mailto:suvansh9596@gmail.com" style="color:white;">suvansh9596@gmail.com</a></div>
-            <div class="cyber-address-item"><i class="fab fa-github"></i><a href="https://github.com/Suvansh0miet" target="_blank">github.com/Suvansh0miet</a></div>
-            <div class="cyber-address-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/suvansh-sharma-3b38b7308" target="_blank">Suvansh Sharma</a></div>
+            <div class="cyber-address-item"><i class="fas fa-envelope"></i><a href="mailto:suvansh9596@gmail.com">suvansh9596@gmail.com</a></div>
+            <div class="cyber-address-item"><i class="fab fa-github"></i><a href="https://github.com/suvanshshar123-star" target="_blank">github.com/suvanshshar123-star</a></div>
+            <div class="cyber-address-item"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/suvansh-sharma-3b38b7308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Suvansh Sharma (LinkedIn)</a></div>
+            <div class="cyber-address-item"><i class="fas fa-globe"></i><a href="https://suvanshshar123-star.github.io/suvansh.github.io/" target="_blank">portfolio / suvansh.github.io</a></div>
           </div>
         </div>
         <div class="contact-right reveal-right">
@@ -692,7 +332,11 @@
 
     <footer class="footer">
       <div>© 2025 Suvansh Sharma — AI/ML Engineer</div>
-      <div><a href="https://github.com/Suvansh0miet" style="color:#a0b0c0;">GitHub</a> · <a href="https://www.linkedin.com/in/suvansh-sharma-3b38b7308" style="color:#a0b0c0;">LinkedIn</a></div>
+      <div>
+        <a href="https://github.com/suvanshshar123-star" target="_blank">GitHub</a> · 
+        <a href="https://www.linkedin.com/in/suvansh-sharma-3b38b7308?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> · 
+        <a href="https://suvanshshar123-star.github.io/suvansh.github.io/" target="_blank">Portfolio</a>
+      </div>
     </footer>
   </main>
 
@@ -708,14 +352,14 @@
       el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
     });
 
-    // reveal on scroll (simple)
+    // reveal on scroll
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.2 });
     reveals.forEach(el => observer.observe(el));
 
-    // progress fill on visible (quick)
+    // progress fill animation when visible
     const progressObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -729,25 +373,12 @@
     }, { threshold: 0.5 });
     document.querySelectorAll('.progress-array').forEach(el => progressObserver.observe(el));
 
-    // disable cursor on touch
     if ('ontouchstart' in window) cursor.style.display = 'none';
-
-    console.log('%c🚀 skill matrix — spline style active', 'color:#80f0ff;font-size:16px');
   </script>
-
   <style>
-    /* extra to ensure details are hidden until hover */
-    .skill-detail {
-      max-height: 0;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .skill-block:hover .skill-detail {
-      max-height: 200px;
-      opacity: 1;
-    }
-    /* progress fill init */
-    .progress-unit-fill { width: 0%; }
+    /* force skill-detail hidden until hover */
+    .skill-detail { max-height: 0; opacity: 0; pointer-events: none; }
+    .skill-block:hover .skill-detail { max-height: 200px; opacity: 1; }
     .visible .progress-unit-fill { transition: width 1s; }
   </style>
 </body>
